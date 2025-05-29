@@ -7,12 +7,15 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
-  host: 'smart-garden',
+
+ const db = mysql.createConnection({
+  host: '127.0.0.1',         // Sửa lại đúng với MySQL Workbench
   user: 'root',
-  password: 123456,
-  database: 'smart_garden'
+  password: "123456",        // Đảm bảo đúng mật khẩu đang lưu trong Vault
+  database: 'garden'         // Đảm bảo đã tạo schema này trong MySQL
 });
+
+
 
 
 db.connect(err => {
